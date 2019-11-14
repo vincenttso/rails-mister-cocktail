@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <div class="navbar d-flex justify-content-between p-3 fixed-top">
+      <a href="/cocktails"><i class="fas fa-glass-cheers"></i></a>
+      <%= link_to 'Add new cocktail', new_cocktail_path, { class: 'button' } %>
+    </div>
+
     <%= yield %>
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
