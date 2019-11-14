@@ -8,6 +8,7 @@
       <a href="/cocktails/<%= thing.id %>" class="card-link">
         <div class="card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= thing.image_url %>)">
         <%= thing.name %>
+        <!-- <%= link_to '+', cocktail_path(thing), method: :delete %> -->
       </div>
       </a>
     <% end %>
