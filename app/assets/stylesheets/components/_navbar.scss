@@ -11,27 +11,30 @@
   width: 40px;
 }
 
-.navbar {
-  i {
-    font-size: 24px;
-    color: rgba(244,183,183,0.9);
-    transition: 0.2s;
-  }
+.cocktail-navbar {
+  background: #FFF8F7;
+  padding: 24px 36px;
 
-  i:hover {
-    color: rgba(244,183,183,1);
-  }
+  .navbar-left {
+    i {
+      font-size: 24px;
+      color: rgba(244,183,183,0.9);
+      transition: 0.2s;
+      margin: 0 16px 0 0;
 
-  .button {
-    padding: 8px 12px;
-    color: #fff;
-    background: rgba(244,183,183,0.9);
-    border-radius: 4px;
-    transition: 0.2s;
+      &:hover {
+        color: rgba(244,183,183,1);
+      }
+    }
 
-    &:hover {
-      color: #fff;
-      background: rgba(244,183,183,1);
+    h3 {
+      color: #000;
+      margin: 0;
+      line-height: 12px;
+    }
+
+    a:hover {
+      color: #000;
       text-decoration: none;
     }
   }

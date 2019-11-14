@@ -3,21 +3,28 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 72px;
 
-  .card {
-    height: 280px;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 2px 2px 12px;
-    transition: 0.2s;
-    background: #f3f3f3;
-    &:hover {
-      transform: scale(1.01)
-    }
-    a {
-      color: #fff;
+  .card-link {
+    color: #fff;
+    margin: 0;
+
+    .card {
+      height: 280px;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 2px 2px 12px;
+      transition: 0.2s;
+      background-position: center 20%;
+      background-size: cover;
+
       &:hover {
-        text-decoration: none;
-        color: #d1d1d1;
+        transform: scale(1.01)
+      }
+      a {
+        color: #fff;
+        &:hover {
+          text-decoration: none;
+          color: #d1d1d1;
+        }
       }
     }
   }

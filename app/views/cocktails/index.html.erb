@@ -5,8 +5,8 @@
 <div class="container">
   <div class="card-grid">
     <% @cocktails.each do |thing| %>
-      <a href="/cocktails/<%= thing.id %>">
-        <div class="card d-flex justify-content-around align-items-center">
+      <a href="/cocktails/<%= thing.id %>" class="card-link">
+        <div class="card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= thing.image_url %>)">
         <%= thing.name %>
       </div>
       </a>

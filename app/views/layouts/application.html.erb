@@ -13,9 +13,14 @@
   </head>
 
   <body>
-    <div class="navbar d-flex justify-content-between p-3 fixed-top">
-      <a href="/cocktails"><i class="fas fa-glass-cheers"></i></a>
-      <%= link_to 'Add new cocktail', new_cocktail_path, { class: 'button' } %>
+    <div class="cocktail-navbar d-flex justify-content-between align-items-center fixed-top">
+      <div class="navbar-left">
+        <a href="/cocktails" class="d-flex justify-content-between align-items-center">
+          <i class="fas fa-glass-cheers"></i>
+          <h3>Cocktails</h3>
+        </a>
+      </div>
+      <%= link_to 'Add a new cocktail', new_cocktail_path, { class: 'button' } %>
     </div>
 
     <%= yield %>

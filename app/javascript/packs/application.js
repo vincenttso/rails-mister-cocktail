@@ -16,3 +16,6 @@
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+import { toggleNavbar } from '../components/navbar';
+
+toggleNavbar();
