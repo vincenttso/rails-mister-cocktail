@@ -6,7 +6,7 @@
   <div class="card-grid">
     <% @cocktails.each do |thing| %>
       <div class="card-container">
-        <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button_delete button_index' %>
+        <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-delete button-index' %>
         <a href="/cocktails/<%= thing.id %>" class="card-link">
           <div class="card d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo, height: 300, width: 400, crop: :fill %>')">
             <%= thing.name %>

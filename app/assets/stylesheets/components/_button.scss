@@ -12,12 +12,12 @@
   }
 }
 
-.button_index {
+.button-index {
   top: 12px;
   right: 12px;
 }
 
-.button_delete {
+.button-delete {
   position: absolute;
   z-index: 2;
   width: 38px;
@@ -35,11 +35,39 @@
   }
 }
 
-.button_show {
+.button-edit {
+  color: $main;
+  opacity: 0.7;
+  transition: 0.2s;
+
+  &:hover {
+    color: $main;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.cocktail-tools {
+  position: relative;
+}
+
+.button-show-title {
   color: #000;
   border: 1px solid #000;
-  right: -32px;
+  top: 2px;
+  right: -36px;
   width: 24px;
   height: 24px;
-  line-height: 0.85;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.button-show {
+  color: #000;
+  border: 1px solid #000;
+  top: 1px;
+  right: -42px;
+  width: 24px;
+  height: 24px;
+  line-height: 0.8;
 }
