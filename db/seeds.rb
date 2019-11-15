@@ -17,63 +17,68 @@ Ingredient.destroy_all
 puts 'Clearing cocktails...'
 Cocktail.destroy_all
 
+puts 'Seeding ingredients...'
+
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+
+JSON.parse(URI.open(url).read)['drinks'].each do |ingredients|
+  Ingredient.create(name: ingredients['strIngredient1'])
+end
+
+puts 'Done!'
+
 puts 'Seeding cocktails...'
 
 cocktails = [
   {
     name: 'Mojito',
     description: 'The best mojito you\'ll ever find. What a delight!',
-    photo: '../../app/assets/images/mojito.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/mojito.jpeg'))
   },
   {
     name: 'Cuba Libre',
     description: 'Want an exotic experience? This Cuba Libre will do just the trick!',
-    photo: 'cuba_libre.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/cuba_libre.jpeg'))
   },
   {
     name: 'Sex On The Beach',
     description: 'Spice and excitement is just what the sex on the beach delivers!',
-    photo: 'sex_on_the_beach'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/sex_on_the_beach.jpeg'))
   },
   {
     name: 'Rhubarb Gin',
     description: 'Only the best for cocktail experts.',
-    photo: 'rhubarb_gin.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/rhubarb_gin.jpeg'))
   },
   {
     name: 'Pina Colada',
     description: 'Nothing more delightful than a well made pina colada!',
-    photo: 'pina_colada.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/pina_colada.jpeg'))
   },
   {
     name: 'Martini',
     description: 'Class and taste.',
-    photo: 'martini.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/martini.jpeg'))
   },
   {
     name: 'Bloody Mary',
     description: 'Exciting! Red, red and.. Red!',
-    photo: 'bloody_mary.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/bloody_mary.jpeg'))
   },
   {
     name: 'Margarita',
     description: 'The best things in life are tangy!',
-    photo: 'margarita.jpeg'
+    photo: File.open(File.join(Rails.root, 'app/assets/images/margarita.jpeg'))
   }
 ]
 
+units = %w[drop/s pinch/es ml/s cup/s tsp/s tbsp/s]
+
 cocktails.each do |cocktail|
-  upload = Cloudinary::Uploader.upload(cocktail[:photo], :crop => "limit")
-  new_cocktail = Cocktail.new(cocktail)
-  new_cocktail.photo = upload
-end
-
-puts 'Done! Seeding ingredients...'
-
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-
-JSON.parse(URI.open(url).read)['drinks'].each do |ingredients|
-  Ingredient.create(name: ingredients['strIngredient1'])
+  new_cocktail = Cocktail.create(cocktail)
+  rand(1..5).times do
+    Dose.create!(cocktail_id: new_cocktail.id, measurement: rand(20..120), unit: units.sample, ingredient_id: Ingredient.all.sample.id)
+  end
 end
 
 puts 'Finished seeding!'
