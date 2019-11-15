@@ -1,2 +1,6 @@
-<h1>Doses#edit</h1>
-<p>Find me in app/views/doses/edit.html.erb</p>
+<div class="container">
+  <h1>Edit <%= @dose.ingredient.name %></h1>
+  <div class="form">
+    <%= render 'form' %>
+  </div>
+</div>

@@ -5,12 +5,14 @@
 <div class="container">
   <div class="card-grid">
     <% @cocktails.each do |thing| %>
-      <a href="/cocktails/<%= thing.id %>" class="card-link">
-        <div class="card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= thing.image_url %>)">
-        <%= thing.name %>
-        <!-- <%= link_to '+', cocktail_path(thing), method: :delete %> -->
+      <div class="card-container">
+        <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button_delete' %>
+        <a href="/cocktails/<%= thing.id %>" class="card-link">
+          <div class="card d-flex justify-content-around align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= thing.image_url %>)">
+          <%= thing.name %>
+        </div>
+        </a>
       </div>
-      </a>
     <% end %>
   </div>
 </div>

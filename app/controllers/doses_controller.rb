@@ -19,7 +19,7 @@ class DosesController < ApplicationController
   def edit; end
 
   def update
-    if @dose.update
+    if @dose.update(dose_params)
       redirect_to cocktail_path(@dose.cocktail)
     else
       render :edit

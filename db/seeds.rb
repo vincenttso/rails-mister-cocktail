@@ -8,8 +8,14 @@
 require 'open-uri'
 require 'json'
 
-puts 'Clearing database...'
+puts 'Clearing doses...'
+Dose.destroy_all
+
+puts 'Clearing ingredients...'
 Ingredient.destroy_all
+
+puts 'Clearing cocktails...'
+Cocktail.destroy_all
 
 puts 'Seeding ingredients...'
 

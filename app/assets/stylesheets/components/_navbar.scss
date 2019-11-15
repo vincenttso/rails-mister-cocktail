@@ -15,6 +15,10 @@
   background: #FFF8F7;
   padding: 24px 36px;
 
+  .hidden {
+    opacity: 0;
+  }
+
   .navbar-left {
     i {
       font-size: 24px;

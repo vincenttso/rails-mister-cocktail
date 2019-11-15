@@ -1,8 +1,30 @@
-<div class="container">
+<div class="cocktail_container">
   <h1><%= @cocktail.name %></h1>
-  <% if @cocktail.doses.description %>
-    <p><%= @cocktail.doses.description %></p>
-  <% else %>
-    <p>There doesn't seem to be a description for <%= @cocktail.name %>, maybe you'd like to add one?</p>
-  <% end %>
+  <div class="cocktail-tools text-right">
+    <%= link_to 'Edit', edit_cocktail_path(@cocktail) %>
+    <%= link_to '+', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button_delete' %>
+  </div>
+
+  <div class="card-info">
+    <div class="card-left text-left">
+      <h4>Description</h4>
+      <%= @cocktail.description %>
+    </div>
+    <div class="card-right d-flex flex-column justify-content-evenly">
+      <h4>Ingredients</h4>
+      <% @cocktail.doses.each do |dose| %>
+        <div class="dose-info mb-2 d-flex justify-content-between align-items-center">
+          <div class="card-left">
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+          </div>
+          <div class="card-right">
+            <%= link_to 'Edit', edit_dose_path(dose) %>
+            <%= link_to '+', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button_delete' %>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), { class: 'button btn-dose m-2' } %>
+    </div>
+  </div>
 </div>
