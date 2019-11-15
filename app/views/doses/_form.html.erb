@@ -1,5 +1,8 @@
+<% units = %w[drop/s pinch/es ml/s cup/s tsp/s tbsp/s] %>
+
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
+  <%= f.input :measurement %>
+  <%= f.input :unit, as: :select, collection: units, prompt: 'Select Unit' %>
   <%= f.association :ingredient %>
   <%= f.submit 'Submit', { class: 'submit button' } %>
 <% end %>

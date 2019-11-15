@@ -21,6 +21,8 @@ puts 'Seeding ingredients...'
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 
+doses_units = %w[drops pinch ml cup tsp tbsp]
+
 JSON.parse(URI.open(url).read)['drinks'].each do |ingredients|
   Ingredient.create(name: ingredients['strIngredient1'])
 end
