@@ -48,14 +48,17 @@
 }
 
 .cocktail-tools {
-  position: relative;
+  position: absolute;
+  top: 120px;
+  right: -6px;
+
 }
 
 .button-show-title {
   color: #000;
   border: 1px solid #000;
   top: 2px;
-  right: -36px;
+  right: -42px;
   width: 24px;
   height: 24px;
   text-align: center;
