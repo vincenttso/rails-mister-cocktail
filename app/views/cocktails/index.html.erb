@@ -1,8 +1,10 @@
-<div class="banner">
-  <h1>Cocktails</h1>
+<div class="banner fixed-top">
+</div>
+<div class="index-landing">
+  <h1>The Mocktails</h1>
   <%= link_to 'Add a new cocktail', new_cocktail_path %>
 </div>
-<div class="container">
+<div class="index-container">
   <div class="card-grid">
     <% @cocktails.each do |thing| %>
       <div class="card-container">

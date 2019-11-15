@@ -77,7 +77,13 @@ units = %w[drop/s pinch/es ml/s cup/s tsp/s tbsp/s]
 cocktails.each do |cocktail|
   new_cocktail = Cocktail.create(cocktail)
   rand(1..5).times do
-    Dose.create!(cocktail_id: new_cocktail.id, measurement: rand(20..120), unit: units.sample, ingredient_id: Ingredient.all.sample.id)
+    amount = rand(1..10)
+    if amount < 5
+      amount
+    else
+      amount = rand(1..65) * 5
+    end
+    Dose.create!(cocktail_id: new_cocktail.id, measurement: amount, unit: units.sample, ingredient_id: Ingredient.all.sample.id)
   end
 end
 
