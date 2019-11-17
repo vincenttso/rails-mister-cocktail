@@ -3,7 +3,7 @@
 <div class="index-landing">
   <h1>The Mocktails</h1>
   <div class="landing-buttons">
-    <input type="search" class="search-input button" placeholder="Search for a cocktail">
+    <input type="search" class="search-input button" placeholder="Search cocktails">
     <%= link_to 'Add a new cocktail', new_cocktail_path %>
   </div>
 </div>
@@ -17,9 +17,6 @@
             <div class="card-top d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo %>')">
               <p class="card-name"><%= thing.name %></p>
             </div>
-            <!-- <div class="card-body-right">
-              <p><%= thing.description %></p>
-            </div> -->
           <% end %>
         </div>
       <% else %>
@@ -29,9 +26,6 @@
             <div class="card-top d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo %>')">
               <p class="card-name"><%= thing.name %></p>
             </div>
-            <!-- <div class="card-body-left">
-              <p><%= thing.description %></p>
-            </div> -->
           <% end %>
         </div>
       <% end %>

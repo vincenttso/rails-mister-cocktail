@@ -29,4 +29,18 @@
       <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), { class: 'button btn-dose m-2' } %>
     </div>
   </div>
+  <div class="card-reviews">
+    <% @cocktail.reviews.each do |review| %>
+      <div class="card-review d-flex align-items-center">
+        <div class="review-left text-left">
+          <p><%= review.user %></p>
+          <% review.rating.times do %>
+            <i class="fas fa-glass-martini-alt"></i>
+          <% end %>
+        </div>
+        <%= review.content %>
+      </div>
+    <% end %>
+    <%= link_to 'Add a review', new_cocktail_review_path(@cocktail), class: 'button'  %>
+  </div>
 </div>

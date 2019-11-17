@@ -5,7 +5,7 @@ const onSearch = () => {
     const cardName = document.querySelectorAll('.card-name');
 
     cardName.forEach((card) => {
-      if (card.innerHTML === event.currentTarget.value) {
+      if (card.innerHTML.toLowerCase() === event.currentTarget.value.toLowerCase()) {
         window.scrollBy(0, (card.getBoundingClientRect().y - (window.innerHeight / 2)));
       }
     });

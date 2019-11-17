@@ -2,7 +2,7 @@
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :measurement %>
-  <%= f.input :unit, as: :select, collection: units, prompt: 'Select Unit' %>
-  <%= f.association :ingredient %>
+  <%= f.input :unit, as: :select, collection: units, prompt: 'Select Unit', input_html: { class: 'select2' } %>
+  <%= f.association :ingredient, input_html: { class: 'select2' } %>
   <%= f.submit 'Submit', { class: 'submit button' } %>
 <% end %>

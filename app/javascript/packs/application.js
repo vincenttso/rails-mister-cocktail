@@ -17,7 +17,11 @@
 
 import 'bootstrap';
 import { toggleNavbar } from '../components/navbar';
-import { onSearch } from '../components/card';
+import { onSearch } from '../components/search';
+import 'select2/dist/css/select2.css';
 
+import { initSelect2 } from '../components/init_select_2';
+
+initSelect2();
 toggleNavbar();
 onSearch();

@@ -1,0 +1,14 @@
+<h1>New Review</h1>
+
+<div class="container">
+  <h1>Add a new review</h1>
+  <%= link_to 'Back to ' + @cocktail.name, cocktail_path(@cocktail), class: 'button-edit' %>
+  <div class="form">
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.input :user %>
+      <%= f.submit 'Submit', { class: 'submit button' } %>
+    <% end %>
+  </div>
+</div>
