@@ -17,5 +17,7 @@
 
 import 'bootstrap';
 import { toggleNavbar } from '../components/navbar';
+import { onSearch } from '../components/card';
 
 toggleNavbar();
+onSearch();

@@ -1,38 +1,64 @@
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 72px;
+  grid-template-columns: 1fr;
+  grid-gap: 104px;
+  width: 70vw;
+  margin: 0 auto;
 
   .card-container {
     position: relative;
     transition: 0.2s;
+    width: 480px;
 
     &:hover {
       transform: scale(1.01)
     }
   }
 
+  .offset-left {
+    margin: 0 40% 0 10%;
+  }
+
+  .offset-right {
+    margin: 0 10% 0 40%;
+  }
+
   .card-link {
     color: #fff;
     margin: 0;
+    position: relative;
 
-    .card {
-      height: 280px;
-      font-size: 24px;
-      font-weight: bold;
+    .card-top {
+      height: 340px;
+      font-size: 36px;
+      font-weight: 900;
       background-position: center 20%;
       background-size: cover;
       background-repeat: no-repeat;
       border: none;
-
-      a {
-        color: #fff;
-        &:hover {
-          text-decoration: none;
-          color: #d1d1d1;
-        }
-      }
     }
+    // .card-body-left {
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 100%;
+    //   right: 0;
+    //   background-color: #008CBA;
+    //   overflow: hidden;
+    //   width: 0;
+    //   height: 100%;
+    //   transition: .5s ease;
+    // }
+    // .card-body-right {
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 100%;
+    //   right: 0;
+    //   background-color: #008CBA;
+    //   overflow: hidden;
+    //   width: 0;
+    //   height: 100%;
+    //   transition: .5s ease;
+    // }
   }
 }
 

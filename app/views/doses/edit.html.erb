@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Edit <%= @dose.ingredient.name %></h1>
-  <a href="/cocktails/<%= @dose.cocktail.id %>">Back to <%= @dose.cocktail.name %></a>
+  <a href="/cocktails/<%= @dose.cocktail.id %>" class="button-edit">Back to <%= @dose.cocktail.name %></a>
   <div class="form">
     <%= render 'form' %>
   </div>

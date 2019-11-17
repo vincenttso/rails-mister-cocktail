@@ -1,12 +1,12 @@
 const navbar = document.querySelector('.cocktail-navbar')
-const banner = document.querySelector('.banner')
+const landingBack = document.querySelector('.landing-back')
 
 const toggleNavbar = () => {
-  if (banner) {
+  if (landingBack) {
     navbar.setAttribute('hidden', '');
     navbar.classList.remove('d-flex');
     window.addEventListener('scroll', (event) => {
-      if (window.scrollY >= banner.clientHeight) {
+      if (window.scrollY >= landingBack.clientHeight) {
         navbar.removeAttribute('hidden', '');
         navbar.classList.add('d-flex');
       } else {

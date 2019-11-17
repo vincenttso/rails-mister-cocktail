@@ -1,3 +1,6 @@
+h1 {
+  font-weight: 900;
+}
 .container {
   background: #fff8f7;
   padding: 72px 0;
@@ -6,7 +9,12 @@
   h1 {
     font-size: 72px;
     font-weight: bold;
-    margin: 40px auto;
+    margin: 40px auto 0;
+  }
+
+  .button-edit {
+    display: block;
+    margin: 0 auto 40px;
   }
 }
 

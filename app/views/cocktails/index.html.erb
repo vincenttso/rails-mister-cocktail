@@ -1,20 +1,40 @@
-<div class="banner fixed-top">
+<div class="landing-back fixed-top">
 </div>
 <div class="index-landing">
   <h1>The Mocktails</h1>
-  <%= link_to 'Add a new cocktail', new_cocktail_path %>
+  <div class="landing-buttons">
+    <input type="search" class="search-input button" placeholder="Search for a cocktail">
+    <%= link_to 'Add a new cocktail', new_cocktail_path %>
+  </div>
 </div>
 <div class="index-container">
   <div class="card-grid">
     <% @cocktails.each do |thing| %>
-      <div class="card-container">
-        <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-delete button-index' %>
-        <a href="/cocktails/<%= thing.id %>" class="card-link">
-          <div class="card d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo, height: 300, width: 400, crop: :fill %>')">
-            <%= thing.name %>
-          </div>
-        </a>
-      </div>
+      <% if (@cocktails.index(thing) + 1) % 2 == 0 %>
+        <div class="card-container offset-right" data-aos="fade-up-left">
+          <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-delete button-index' %>
+          <%= link_to cocktail_path(thing), class: 'card-link' do  %>
+            <div class="card-top d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo %>')">
+              <p class="card-name"><%= thing.name %></p>
+            </div>
+            <!-- <div class="card-body-right">
+              <p><%= thing.description %></p>
+            </div> -->
+          <% end %>
+        </div>
+      <% else %>
+        <div class="card-container offset-left" data-aos="fade-up-right">
+          <%= link_to '+', cocktail_path(thing), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-delete button-index' %>
+          <%= link_to cocktail_path(thing), class: 'card-link' do  %>
+            <div class="card-top d-flex justify-content-around align-items-center"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path thing.photo %>')">
+              <p class="card-name"><%= thing.name %></p>
+            </div>
+            <!-- <div class="card-body-left">
+              <p><%= thing.description %></p>
+            </div> -->
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

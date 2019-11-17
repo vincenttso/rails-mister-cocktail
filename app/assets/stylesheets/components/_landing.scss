@@ -1,5 +1,6 @@
-.banner {
+.landing-back {
   z-index: -1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
   background-image: url('https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');
   background-size: cover;
   background-position: center 60%;
@@ -21,11 +22,13 @@
     font-weight: bold;
   }
 
-  a {
+  a, input {
     color: #fff;
+    line-height: 1;
     padding: 24px 36px;
     background: rgba(0,0,0,0.8);
     transition: 0.2s;
+    border: 0;
     border-radius: 2px;
 
     &:hover {
