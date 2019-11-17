@@ -83,7 +83,9 @@ cocktails.each do |cocktail|
     else
       amount = rand(1..65) * 5
     end
-    Dose.create!(cocktail_id: new_cocktail.id, measurement: amount, unit: units.sample, ingredient_id: Ingredient.all.sample.id)
+    ingredient = Ingredient.all.sample
+    Dose.create!(cocktail_id: new_cocktail.id, measurement: amount, unit: units.sample, ingredient_id: ingredient.id)
+    Ingredient.all - ingredient
   end
 end
 
