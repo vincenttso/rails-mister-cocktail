@@ -13,6 +13,23 @@
     &:hover {
       transform: scale(1.01)
     }
+
+    .card-link {
+      color: #fff;
+      margin: 0;
+      display: block;
+      position: relative;
+
+      .card-top {
+        height: 340px;
+        font-size: 36px;
+        font-weight: 900;
+        background-position: center 20%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: none;
+      }
+    }
   }
 
   .offset-left {
@@ -21,22 +38,6 @@
 
   .offset-right {
     margin: 0 10% 0 40%;
-  }
-
-  .card-link {
-    color: #fff;
-    margin: 0;
-    position: relative;
-
-    .card-top {
-      height: 340px;
-      font-size: 36px;
-      font-weight: 900;
-      background-position: center 20%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border: none;
-    }
   }
 }
 
